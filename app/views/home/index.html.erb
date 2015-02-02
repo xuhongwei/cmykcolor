@@ -1,0 +1,90 @@
+<!-- banner start========================= -->
+<div id="banner" class="carousel slide">
+  <ol class="carousel-indicators">
+    <li data-target="#banner" data-slide-to="0" class="active"></li>
+    <li data-target="#banner" data-slide-to="1"></li>
+    <li data-target="#banner" data-slide-to="2"></li>
+  </ol>
+
+  <div class="carousel-inner">
+    <div class="active item">
+      <img src="/assets/weddings.jpg" alt="weddings"  class="img-responsive">
+    </div>
+    <div class="item">
+      <img src="/assets/weddings.jpg" alt="weddings"  class="img-responsive">
+    </div>
+    <div class="item">
+      <img src="/assets/weddings.jpg" alt="weddings"  class="img-responsive">
+    </div>
+  </div>
+
+  <a class="carousel-control" href="#banner" data-slide="prev">
+    <span class="icon-prev icon-large"></span>
+  </a>
+  <a class="carousel-control right" href="#banner" data-slide="next">
+    <span class="icon-next icon-large"></span>
+  </a>
+</div>
+<!-- banner end========================= -->
+<!-- services start========================= -->
+<div id="services">
+  <div id="service_id" class="well">
+    Some of our top services
+    <button id="services_view_more" class="btn btn-primary pull-right">VIEW MORE</button>
+  </div>
+  <div id="service_list">
+    <div class="service-padding">
+      <div class="service">
+        <a href=""><img class="service_img" src="/assets/weddings.jpg"></a>
+        <a href="#" class="btn btn-primary">Read More</a>
+        <a href=""><div class="service_icon service_icon_1"></div></a>
+      </div>
+    </div>
+    <div class="service-padding">
+      <div class="service">
+        <a href=""><img class="service_img" src="/assets/weddings.jpg"></a>
+        <a href="#" class="btn btn-primary">Read More</a>
+        <a href=""><div class="service_icon service_icon_2"></div></a>
+      </div>
+    </div>
+    <div class="service-padding">
+      <div class="service">
+        <a href=""><img class="service_img" src="/assets/weddings.jpg"></a>
+        <a href="#" class="btn btn-primary">Read More</a>
+        <a href=""><div class="service_icon service_icon_3"></div></a>
+      </div>
+    </div>
+    <div class="service-padding">
+      <div class="service">
+        <a href=""><img class="service_img" src="/assets/weddings.jpg"></a>
+        <a href="#" class="btn btn-primary">Read More</a>
+        <a href=""><div class="service_icon service_icon_4"></div></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+<!-- services end========================= -->
+<!-- products start========================= -->
+<div id="products" class="">
+  <div id="products_title">
+    <h3>OUR PRODUCTS</h3>
+  </div>
+  <div id="products_categroies_name">
+    <p><%= @categories.map(&:name).join("/") %></p>
+  </div>
+</div>
+<div id="products_list">
+  <div id="products_container">
+    <%= render :partial => "common/home_products", :object => @products %>
+  </div>
+  <div id="products_pager">
+    <div id="products_pager_hr">
+      <hr />
+    </div>
+    <div id="products_pager_prev_next">
+      <%= render :partial => "common/paginator", :object => @products %>
+    </div>
+  </div>
+</div>
+<!-- products end========================= -->

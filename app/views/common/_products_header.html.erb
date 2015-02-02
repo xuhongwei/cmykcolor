@@ -1,0 +1,8 @@
+<div id="products_index_categories">
+  <div class="products_index_one_category">
+    <%= link_to "All",
+                products_path,
+                :class => "btn #{category_all?}" %>
+  </div>
+  <%= render :partial => "common/category", :collection => @categories %>
+</div>

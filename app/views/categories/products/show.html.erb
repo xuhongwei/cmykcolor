@@ -1,0 +1,16 @@
+<%= render "common/products_bread_crumb" %>
+<div class="product_show_header_container">
+  <%= render "common/products_header" %>
+  <div id="product_relative">
+    <div id="product_relative">
+      <%= link_to_previous_category_product @category, @previous %>
+      <%= link_to_next_category_product @category, @next %>
+    </div>
+  </div>
+</div>
+<div class="clearfix">
+  <h2><%= @product.try :name %></h2>
+  <div id="show_product_detail">
+    <%= raw @product.try :detail %>
+  </div>
+</div>

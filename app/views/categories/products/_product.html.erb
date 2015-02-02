@@ -1,0 +1,16 @@
+<div class="products_index_one_product pull-left">
+  <div class="products_index_product_img_container">
+    <div class="products_index_product_img_container_inner">
+      <%= link_to image_tag(product.try(:photo),
+                           :class => "products_index_product_img"),
+                  category_product_path(product.category, product) %>
+    </div>
+  </div>
+  <div class="products_index_product_detail_container">
+    <h4><%= link_to product.try(:name), category_product_path(product.category, product) %></h4>
+    <div><%= simple_format product.try(:brief) %></div>
+    <%= link_to t("view_details"), category_product_path(product.category, product),
+                :class => "products_index_product_detail_button btn btn-primary",
+                :target => "_self", :title => "#{product.name}" %>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<%= render "common/products_bread_crumb" %>
+<%= render "common/products_header" %>
+<div class="clearfix"></div>
+<div id="products_index_products_list">
+  <%= render :partial => "product", :collection => @products %>
+</div>
+<div id="products_index_page">
+  <%= paginate @products %>
+</div>

@@ -1,0 +1,5 @@
+<div class="<%= category_active? category %>">
+  <%= link_to category.try(:name),
+              category_products_path(category.slug),
+              :class => "btn" %>
+</div>

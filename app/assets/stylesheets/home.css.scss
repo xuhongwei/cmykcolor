@@ -1,0 +1,221 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#services {
+  margin: 20px 0 20px 0;
+  vertical-align: middle;
+}
+
+#services_view_more {
+  margin: -6px;
+  // background-color: rgb(223,101,90);
+  // color: #fff;
+}
+
+#service_list{
+  height: 230px;
+}
+
+.service {
+  display: block;
+  position: relative;
+  width: 190px;
+  height: 190px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #ededed;
+}
+
+.service .service_img { 
+  width:190px;
+  height:190px;
+  display: none;
+}
+.service:hover .service_img{
+  display : block;
+}
+
+.service .service_icon{
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 55px;
+  left: 65px;
+}
+
+.service .service_icon_1{
+  background-image: url('banner_1.png');
+}
+
+.service .service_icon_2{
+  background-image: url('banner_2.png');
+}
+
+.service .service_icon_3{
+  background-image: url('banner_3.png');
+}
+
+.service .service_icon_4{
+  background-image: url('banner_4.png');
+}
+
+.service:hover .service_icon_1{
+  background-image: url('banner_1_hover.png');
+}
+
+.service:hover .service_icon_2{
+  background-image: url('banner_2_hover.png');
+}
+
+.service:hover .service_icon_3{
+  background-image: url('banner_3_hover.png');
+}
+
+.service:hover .service_icon_4{
+  background-image: url('banner_4_hover.png');
+}
+
+.service:hover .btn{
+  text-decoration: none;
+  background-color: #e0645a;
+  border-color: #d95f52;
+}
+
+.service .btn {
+  position: absolute;
+  top: 170px;
+  left: 47px;
+}
+
+.service-padding {
+  width: 225px;
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-left: 38px;
+  padding-right: 15px;
+}
+
+
+#products {
+  text-align: center;
+  height: 200px;
+  background-color: rgb(237,237,237);
+}
+
+#products_categroies_name {
+  color: rgb(163,163,163);
+}
+
+#products_title {
+  margin: 20px auto 0 auto;
+  padding: 20px  0 0 0;
+  color: rgb(227,84,72);
+  text-align: center;
+}
+
+#products_list {
+  height: 300px;
+  text-align: center;
+}
+
+.products_list_small_img {
+  width:300px;
+  height:200px;
+  padding: 25px 4px 4px 4px;
+}
+
+.products_list_big_img {
+  width:400px;
+  height:240px;
+  padding: 30px 4px 4px 4px;
+}
+
+#products_container {
+  position: relative;
+  margin: -100px auto 0 auto;
+  width: 900px;
+  height: 300px;
+}
+
+#products_list_left {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  bottom: 60px;
+  background-color: rgb(235,235,235);
+  background: url('home_product_bg_small.png');
+}
+
+#products_list_right {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  bottom: 60px;
+  right: 0;
+  background-color: rgb(235,235,235);
+  background: url('home_product_bg_small.png');
+}
+
+#products_list_center {
+  position: absolute;
+  width: 400px;
+  height: 240px;
+  bottom: 40px;
+  left: 250px;
+  background-color: rgb(235,235,235);
+  .b-hero{
+    background: url('home_product_bg_big.png') no-repeat right top;
+  }
+}
+
+#products_pager {
+  text-align: center;
+}
+
+#products_pager_hr {
+  margin: 0 auto;
+  width: 600px;
+}
+
+#products_pager_prev_next {
+  margin-top: -36px;
+  float: right;
+}
+
+#products_pager_prev {
+  margin-left: 10px;
+  background-image: image_url("left_gray_arrow.png");
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+
+#products_pager_prev:hover {
+  background-image: image_url("left_red_arrow.png");
+}
+
+#products_pager_prev.unclickble:hover {
+  background-image: image_url("left_gray_arrow.png");
+}
+
+#products_pager_next {
+  margin-right: 20px;
+  margin-left: 5px;
+  background-image: image_url("right_gray_arrow.png");
+  text-decoration: none;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+
+#products_pager_next:hover {
+  background-image: image_url("right_red_arrow.png");
+}
+
+#products_pager_next.unclickble:hover {
+  background-image: image_url("right_gray_arrow.png");
+}

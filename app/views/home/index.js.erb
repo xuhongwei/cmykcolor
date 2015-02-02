@@ -1,0 +1,2 @@
+$('#products_container').html("<%= escape_javascript render(:partial => '/common/home_products', :object=> @products) %>");
+$('#products_pager_prev_next').html("<%= escape_javascript render(:partial => '/common/paginator', :object=> @products) %>");
