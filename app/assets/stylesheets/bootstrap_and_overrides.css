@@ -88,3 +88,7 @@ zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '/');
 padding: 0 5px;
 color: #000;
 }
+
+.form-group img{
+  max-width: 100%;
+}

@@ -1,0 +1,51 @@
+<%- model_class = Page -%>
+<div class="page-header">
+  <h1><%=t :pages %></h1>
+</div>
+
+<%= link_to t('.new'),
+            new_admin_page_path,
+            :class => 'btn btn-primary' %>
+<hr>
+<%= grid(@pages_grid) do |grid|
+  grid.column name: model_class.human_attribute_name(:name),
+              attribute: 'name' do |page|
+    link_to page.name.truncate(20),
+            admin_page_path(page),
+            { :title => page.name }
+  end
+
+  grid.column name: model_class.human_attribute_name(:page_type),
+              attribute: 'page_type' do |page|
+    page.page_type
+  end
+
+  grid.column name: model_class.human_attribute_name(:weight),
+              attribute: 'weight' do |page|
+    page.weight
+  end
+
+  grid.column name: model_class.human_attribute_name(:created_at),
+              attribute: 'created_at' do |page|
+    page.created_at.try(:strftime, "%Y-%m-%d %H:%M:%S")
+  end
+
+  grid.column name: model_class.human_attribute_name(:updated_at),
+              attribute: 'updated_at' do |page|
+    page.updated_at.try(:strftime, "%Y-%m-%d %H:%M:%S")
+  end
+
+  grid.column do |page|
+    buffer = ""
+    buffer << link_to(t('.edit'),
+                      edit_admin_page_path(page),
+                      :class => 'btn btn-default btn-xs')
+    buffer << link_to(t('.destroy'),
+                      admin_page_path(page),
+                      :method => :delete,
+                      :data => { :confirm => t("helpers.confirms.destroy",
+                                              :default => 'Are you sure?') },
+                      :class => 'btn btn-xs btn-danger')
+    raw buffer
+  end
+end -%>

@@ -1,0 +1,62 @@
+<%- model_class = Product -%>
+<div class="page-header">
+  <h1><%=t :products %></h1>
+</div>
+
+<%= link_to t('.new'),
+            new_admin_product_path,
+            :class => 'btn btn-primary' %>
+<hr>
+<%= grid(@products_grid) do |grid|
+  grid.column name: model_class.human_attribute_name(:name),
+              attribute: 'name' do |product|
+    link_to product.name.truncate(20),
+            admin_product_path(product),
+            { :title => product.name }
+  end
+
+  grid.column name: t(:associated_category),
+              model: 'Category', attribute: 'name' do |product|
+    product.category.try(:name)
+  end
+
+  grid.column name: model_class.human_attribute_name(:brief),
+              attribute: 'brief' do |product|
+    product.brief
+  end
+
+  grid.column name: model_class.human_attribute_name(:weight),
+              attribute: 'weight' do |product|
+    product.weight
+  end
+
+  grid.column name: t(:photo), filter: false, ordering: false do |product|
+    buffer = ""
+    buffer << image_tag(product.photo, :size => '90x60')
+    raw buffer
+  end
+
+  grid.column name: model_class.human_attribute_name(:created_at),
+              attribute: 'created_at' do |product|
+    product.created_at.try(:strftime, "%Y-%m-%d %H:%M:%S")
+  end
+
+  grid.column name: model_class.human_attribute_name(:updated_at),
+              attribute: 'updated_at' do |product|
+    product.updated_at.try(:strftime, "%Y-%m-%d %H:%M:%S")
+  end
+
+  grid.column do |product|
+    buffer = ""
+    buffer << link_to(t('.edit'),
+                     edit_admin_product_path(product),
+                     :class => 'btn btn-default btn-xs')
+    buffer << link_to(t('.destroy'),
+                      admin_product_path(product),
+                      :method => :delete,
+                      :data => { :confirm => t("helpers.confirms.destroy",
+                                              :default => 'Are you sure?') },
+                      :class => 'btn btn-xs btn-danger')
+    raw buffer
+  end
+end -%>

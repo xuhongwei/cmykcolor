@@ -14,6 +14,9 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
+//= require wice_grid.js
+//= require jquery.ui.datepicker
+//= require ckeditor/init
 //= require_tree .
 
 var ready = function() {
