@@ -1,0 +1,43 @@
+<%- model_class = Admin -%>
+<div class="page-header">
+  <h3><%=t :admins %></h3>
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+              new_admin_admin_path,
+              :class => 'btn btn-primary' %>
+</div>
+
+
+<%= grid(@admins) do |grid|
+  grid.column name: model_class.human_attribute_name(:email),
+    attribute: 'email' do |admin|
+    admin.email
+  end
+  grid.column name: model_class.human_attribute_name(:sign_in_count),
+    attribute: 'sign_in_count' do |admin|
+    admin.sign_in_count
+  end
+  grid.column name: model_class.human_attribute_name(:current_sign_in_at),
+    attribute: 'current_sign_in_at' do |admin|
+    l admin.current_sign_in_at if admin.current_sign_in_at.present?
+  end
+  grid.column name: model_class.human_attribute_name(:last_sign_in_at),
+    attribute: 'last_sign_in_at' do |admin|
+    l admin.last_sign_in_at if admin.last_sign_in_at.present?
+  end
+  grid.column name: model_class.human_attribute_name(:current_sign_in_ip),
+    attribute: 'current_sign_in_ip' do |admin|
+    admin.current_sign_in_ip
+  end
+  grid.column name: model_class.human_attribute_name(:last_sign_in_ip),
+    attribute: 'last_sign_in_ip' do |admin|
+    admin.last_sign_in_ip
+  end
+  grid.column do |admin|
+    link_to t('.destroy', :default => t("helpers.links.destroy")),
+                admin_admin_path(admin),
+                :method => "delete",
+                :data => { :confirm => t("helpers.confirms.destroy",
+                                         :default => 'Are you sure?') },
+                :class => 'btn btn-danger'
+  end
+end -%>

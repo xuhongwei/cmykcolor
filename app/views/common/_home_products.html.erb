@@ -1,17 +1,20 @@
 <% if home_products[0] %>
   <div id="products_list_left" class="browser">
-    <%= link_to(image_tag(home_products[0].photo, :class => "products_list_small_img"), product_path(home_products[0])) %>
+    <%= link_to(image_tag(home_products[0].photo, :class => "products_list_small_img"),
+                product_path(home_products[0])) %>
   </div>
 <% end %>
 <% if home_products[2] %>
   <div id="products_list_right" class="browser">
-    <%= link_to(image_tag(home_products[2].photo, :class => "products_list_small_img"), product_path(home_products[2])) %>
+    <%= link_to(image_tag(home_products[2].photo, :class => "products_list_small_img"),
+                product_path(home_products[2])) %>
   </div>
 <% end %>
 <% if home_products[1] %>
   <div id="products_list_center" class="browser">
     <div class="b-hero">
-      <%= link_to(image_tag(home_products[1].photo, :class => "products_list_big_img"), product_path(home_products[1])) %>
+      <%= link_to(image_tag(home_products[1].photo, :class => "products_list_big_img"),
+                  product_path(home_products[1])) %>
     </div>
   </div>
 <% end %>

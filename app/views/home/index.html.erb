@@ -8,13 +8,13 @@
 
   <div class="carousel-inner">
     <div class="active item">
-      <img src="/assets/weddings.jpg" alt="weddings"  class="img-responsive">
+      <%= image_tag "weddings.jpg", {alt: "", class: "img-responsive"} %>
     </div>
     <div class="item">
-      <img src="/assets/weddings.jpg" alt="weddings"  class="img-responsive">
+      <%= image_tag "weddings.jpg", {alt: "", class: "img-responsive"} %>
     </div>
     <div class="item">
-      <img src="/assets/weddings.jpg" alt="weddings"  class="img-responsive">
+      <%= image_tag "weddings.jpg", {alt: "", class: "img-responsive"} %>
     </div>
   </div>
 
@@ -29,38 +29,15 @@
 <!-- services start========================= -->
 <div id="services">
   <div id="service_id" class="well">
-    Some of our top services
-    <button id="services_view_more" class="btn btn-primary pull-right">VIEW MORE</button>
+    <%= t "text.some_our_top_services" %>
+    <%= link_to t("links.view_more"),
+                services_path,
+                { id: "services_view_more",
+                  class: "btn btn-primary pull-right"
+                } %>
   </div>
   <div id="service_list">
-    <div class="service-padding">
-      <div class="service">
-        <a href=""><img class="service_img" src="/assets/weddings.jpg"></a>
-        <a href="#" class="btn btn-primary">Read More</a>
-        <a href=""><div class="service_icon service_icon_1"></div></a>
-      </div>
-    </div>
-    <div class="service-padding">
-      <div class="service">
-        <a href=""><img class="service_img" src="/assets/weddings.jpg"></a>
-        <a href="#" class="btn btn-primary">Read More</a>
-        <a href=""><div class="service_icon service_icon_2"></div></a>
-      </div>
-    </div>
-    <div class="service-padding">
-      <div class="service">
-        <a href=""><img class="service_img" src="/assets/weddings.jpg"></a>
-        <a href="#" class="btn btn-primary">Read More</a>
-        <a href=""><div class="service_icon service_icon_3"></div></a>
-      </div>
-    </div>
-    <div class="service-padding">
-      <div class="service">
-        <a href=""><img class="service_img" src="/assets/weddings.jpg"></a>
-        <a href="#" class="btn btn-primary">Read More</a>
-        <a href=""><div class="service_icon service_icon_4"></div></a>
-      </div>
-    </div>
+    <%= render :partial => "common/home_services", :object => @services %>
   </div>
 </div>
 <div class="clearfix"></div>
@@ -68,7 +45,7 @@
 <!-- products start========================= -->
 <div id="products" class="">
   <div id="products_title">
-    <h3>OUR PRODUCTS</h3>
+    <h3><%= t "links.our_products" %></h3>
   </div>
   <div id="products_categroies_name">
     <p><%= @categories.map(&:name).join("/") %></p>

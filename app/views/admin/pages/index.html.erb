@@ -1,12 +1,10 @@
 <%- model_class = Page -%>
 <div class="page-header">
-  <h1><%=t :pages %></h1>
-</div>
-
-<%= link_to t('.new'),
+  <h3><%=t :pages %></h3>
+  <%= link_to t('.new'),
             new_admin_page_path,
             :class => 'btn btn-primary' %>
-<hr>
+</div>
 <%= grid(@pages_grid) do |grid|
   grid.column name: model_class.human_attribute_name(:name),
               attribute: 'name' do |page|

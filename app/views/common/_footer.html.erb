@@ -12,12 +12,12 @@
     <div id="footer_company" class="footer_element">
       <ul>
         <li><h4>Company</h4></li>
-        <li><a href="">About</a></li>
-        <li><a href="">FAQ</a></li>
-        <li><a href="">Contact</a></li>
-        <li><a href="">Terms</a></li>
-        <li><a href="">Products</a></li>
-        <li><a href="">Testimonials</a></li>
+        <li><%= link_to t("footer.about"), about_path %></li>
+        <li><%= link_to t("footer.faq"), faq_path %></li>
+        <li><%= link_to t("footer.contact"), contactus_path %></li>
+        <li><%= link_to t("footer.terms"), term_path %></li>
+        <li><%= link_to t("links.products"), products_path %></li>
+        <li><%= link_to t("footer.testimonials"), testimonial_path %></li>
       </ul>
     </div>
     <div id="footer_community" class="footer_element">
@@ -30,8 +30,8 @@
       </ul>
     </div>    
     <div id="footer_qrcode" class="footer_element">
-      <img src="/assets/qr1.png" alt="">
-      <img src="/assets/qr2.png" alt="">
+      <%= image_tag "qr1.png" %>
+      <%= image_tag "qr2.png" %>
     </div>
   </div>
 </div>

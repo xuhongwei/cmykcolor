@@ -1,0 +1,16 @@
+<div class="products_index_one_product pull-left">
+  <div class="services_index_product_img_container">
+    <div class="services_index_product_img_container_inner">
+      <%= link_to image_tag(service.try(:photo),
+                           :class => "services_index_product_img"),
+                  service_path(service) %>
+    </div>
+  </div>
+  <div class="products_index_product_detail_container">
+    <h4><%= link_to service.try(:name), service_path(service) %></h4>
+    <div><%= simple_format service.try(:brief) %></div>
+    <%= link_to t("links.view_details"), service_path(service),
+                :class => "products_index_product_detail_button btn btn-primary",
+                :target => "_self", :title => "#{service.name}" %>
+  </div>
+</div>

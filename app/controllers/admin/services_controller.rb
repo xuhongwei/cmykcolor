@@ -16,7 +16,7 @@ class Admin::ServicesController < Admin::AdminApplicationController
     @service = Service.new(service_params)
     respond_to do |format|
       if @service.save
-        format.html { redirect_to admin_service_url(@service), notice: t(:careted_success) }
+        format.html { redirect_to admin_service_url(@service), notice: t(:created_success) }
       else
         format.html { render :edit }
       end

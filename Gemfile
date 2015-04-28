@@ -52,4 +52,7 @@ gem 'devise'
 # search list
 gem 'wice_grid'
 
+# autocomplete
+gem 'rails3-jquery-autocomplete'
+
 gem 'ckeditor', github: 'galetahub/ckeditor'

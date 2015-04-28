@@ -15,7 +15,7 @@
 <body>
   <div class="navbar navbar-default navbar-static-top">
     <div class="container">
-      <a class="navbar-brand"><%=t :site_name %></a>
+      <a class="navbar-brand"><%=t :app_name %></a>
       <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
           <li class="<%= controller.controller_name.eql?('categories') ? 'active' : '' %>">
@@ -27,8 +27,14 @@
           <li class="<%= controller.controller_name.eql?('services') ? 'active' : '' %>">
             <%= link_to(t(:services), admin_services_path) %>
           </li>
+          <li class="<%= controller.controller_name.eql?('news') ? 'active' : '' %>">
+            <%= link_to(t(:news), admin_news_index_path) %>
+          </li>
           <li class="<%= controller.controller_name.eql?('pages') ? 'active' : '' %>">
             <%= link_to(t(:pages), admin_pages_path) %>
+          </li>
+          <li class="<%= controller.controller_name.eql?('admins') ? 'active' : '' %>">
+            <%= link_to(t(:admins), admin_admins_path) %>
           </li>
         </ul>
         <%= render 'admin/common/admin_nav' %>
@@ -45,7 +51,7 @@
       </div><!--/row-->
 
       <footer>
-        <p>&copy; <%=t :site_name %> 2014</p>
+        <p>&copy; <%=t :app_name %> 2015</p>
       </footer>
 
     </div> <!-- /container -->

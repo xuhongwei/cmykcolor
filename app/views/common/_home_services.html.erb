@@ -1,0 +1,21 @@
+<% (0..3).each do |i| %>
+  <% service = home_services[i] %>
+  <div class="service-padding">
+    <div class="service">
+      <% if service %>
+        <%= link_to image_tag(service.try(:photo_url), class: 'service_img'), service_path(service) %>
+        <%= link_to t("links.read_more"), service_path(service), { class: "btn btn-primary" } %>
+        <%= link_to(service) do %>
+          <div class="service_icon service_icon_<%="#{i+1}"%>"></div>
+        <% end %>
+      <% else %>
+        <a href="javascript:;">
+          <%= image_tag("", class: 'service_img') %>
+        </a>
+        <a href="javascript:;" class="btn btn-primary"><%= t("links.read_more") %></a>
+        <a href="javascript:;"><div class="service_icon service_icon_<%="#{i+1}"%>"></div></a>
+      <% end %>
+      
+    </div>
+  </div>
+<% end %>

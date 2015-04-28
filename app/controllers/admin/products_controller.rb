@@ -17,7 +17,7 @@ class Admin::ProductsController < Admin::AdminApplicationController
     @product = Product.new(product_params)
     respond_to do |format|
       if @product.save
-        format.html { redirect_to admin_product_url(@product), notice: t(:careted_success) }
+        format.html { redirect_to admin_product_url(@product), notice: t(:created_success) }
       else
         format.html { render :edit }
       end

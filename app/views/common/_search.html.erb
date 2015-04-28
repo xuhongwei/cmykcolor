@@ -1,0 +1,11 @@
+<%= form_tag({ :controller => "products",
+               :action => 'search' },
+             { :method => :get,
+               :id=>"header_search_form",
+               :class => "navbar-form", 
+               :name => "header_search_form" }) do %>
+  <div class="form-group">
+    <input type="text" name="q" value="<%= params[:q]%>" class="form-control pull-left" placeholder="Search" id="header_search_input">
+    <span class="glyphicon glyphicon-search" id="header_search_icon" onclick="header_search_form.submit();"></span>
+  </div>
+<% end %>

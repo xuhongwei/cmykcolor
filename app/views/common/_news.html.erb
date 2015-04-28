@@ -1,0 +1,16 @@
+<div class="products_index_one_product pull-left">
+  <div class="services_index_product_img_container">
+    <div class="services_index_product_img_container_inner">
+      <%= link_to image_tag(news.try(:photo),
+                           :class => "services_index_product_img"),
+                  news_path(news) %>
+    </div>
+  </div>
+  <div class="products_index_product_detail_container">
+    <h4><%= link_to news.try(:name), news_path(news) %></h4>
+    <div><%= simple_format news.try(:brief) %></div>
+    <%= link_to t("links.view_details"), news_index_path(news),
+                :class => "products_index_product_detail_button btn btn-primary",
+                :target => "_self", :title => "#{news.name}" %>
+  </div>
+</div>

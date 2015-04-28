@@ -3,9 +3,9 @@ class Admin::PagesController < Admin::AdminApplicationController
 
   def index
     @pages_grid = initialize_grid(Page,
-                                     order: 'updated_at',
-                                     order_direction: 'desc',
-                                     per_page: 10)
+                                  order: 'updated_at',
+                                  order_direction: 'desc',
+                                  per_page: 10)
   end
 
   def new
@@ -16,7 +16,7 @@ class Admin::PagesController < Admin::AdminApplicationController
     @page = Page.new(page_params)
     respond_to do |format|
       if @page.save
-        format.html { redirect_to admin_page_url(@page), notice: t(:careted_success) }
+        format.html { redirect_to admin_page_url(@page), notice: t(:created_success) }
       else
         format.html { render :edit }
       end
@@ -54,7 +54,7 @@ class Admin::PagesController < Admin::AdminApplicationController
 
   def page_params
     if params[:page]
-      params.require(:page).permit(:name, :photo, :detail, :weight)
+      params.require(:page).permit(:name, :photo, :detail, :weight, :page_type)
     else
       nil
     end

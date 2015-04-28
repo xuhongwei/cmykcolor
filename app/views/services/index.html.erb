@@ -1,9 +1,9 @@
-<%= render "common/products_bread_crumb" %>
-<%= render "common/products_header" %>
+<%= render "common/services_bread_crumb" %>
+<%= render "common/services_header" %>
 <div class="clearfix"></div>
 <div id="products_index_products_list">
-  <%= render :partial => "common/product", :collection => @products %>
+  <%= render :partial => "common/service", :collection => @services %>
 </div>
 <div id="products_index_page">
-  <%= paginate @products %>
+  <%= paginate @services %>
 </div>

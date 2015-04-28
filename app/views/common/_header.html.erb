@@ -1,24 +1,32 @@
 <div class="cmyk-header">
   <div class="top">
     <div class="social">
-      <a href=""><img src="/assets/facebook.png" style="width:20px;height:20px;"></a>
-      <a href=""><img src="/assets/google.png" style="width:20px;height:20px;"></a>
-      <a href=""><img src="/assets/twitter.png" style="width:20px;height:20px;"></a>
-      <a href=""><img src="/assets/rss.png" style="width:20px;height:20px;"></a>
+      <a href=""><%= image_tag "facebook.png" %></a>
+      <a href=""><%= image_tag "google.png" %></a>
+      <a href=""><%= image_tag "twitter.png" %></a>
+      <a href=""><%= image_tag "rss.png" %></a>
     </div>
   </div>
   <div class="menu">
     <div class="navbar-header">
-        <img src="/assets/logo.png" style="width:200px;height:72px;">
+      <%= link_to image_tag("logo.png"), root_path, alt: t("app_name") %>
     </div>
     <div class="navbar-collapse collapse pull-left">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/">HOME</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">SERVICES</a></li>
+        <li class="<%= controller.controller_name.eql?('home') ? 'active' : '' %>">
+          <%= link_to t("header.home"), root_path %>
+        </li>
+        <li class="<%= request.path.start_with?('/about') ? 'active' : '' %>">
+          <%= link_to t("header.about"), about_path %>
+        </li>
+        <li class="<%= request.path.start_with?('/services') ? 'active' : '' %>">
+          <%= link_to t("header.services"), services_path %>
+        </li>
         <li class="dropdown">
-          <%= link_to products_path, :class => "dropdown-toggle disabled", "data-toggle" => "dropdown" do %>
-            <span class="caret"></span>PRODUCTS</a>
+          <%= link_to products_path,
+                      :class => "dropdown-toggle disabled #{request.path.start_with?('/products') ? 'active' : ''}",
+                      "data-toggle" => "dropdown" do %>
+            <span class="caret"></span><%= t "header.products" %>
           <% end %>
           <ul class="dropdown-menu" role="menu">
             <% if !@categories.blank? %>
@@ -28,16 +36,14 @@
             <% end %>
           </ul>
         </li>
-        <li><a href="#">NEWS</a></li>
-        <li><a href="#">CONTACTUS</a></li>
+        <li class="<%= request.path.start_with?('/news') ? 'active' : '' %>">
+          <%= link_to t("header.news"), news_index_path %>
+        </li>
+        <li class="<%= request.path.start_with?('/contactus') ? 'active' : '' %>">
+          <%= link_to t("header.contact_us"), contactus_path %>
+        </li>
       </ul>
     </div>
-    <form class="navbar-form" role="search" id="header_search_form">
-      <div class="form-group">
-        <input type="text" class="form-control pull-left" placeholder="Search" id="header_search_input">
-        <span class="glyphicon glyphicon-search" id="header_search_icon">
-        </span>
-      </div>
-    </form>
+    <%= render "common/search" %>
   </div>
 </div>

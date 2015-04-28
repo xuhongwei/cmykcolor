@@ -4,15 +4,7 @@ class Admin::AdminApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   # change devise controller's layout
-  layout :layout_by_resource
+  layout "admin"
 
-  protected
-
-  def layout_by_resource
-    if devise_controller?
-      "login"
-    else
-      "admin"
-    end
-  end
+  before_action :authenticate_admin!
 end

@@ -1,0 +1,30 @@
+<%= form_for [:admin, @news], :html => { :class => "form-horizontal" } do |f| %>
+  <%= render_error_message @news %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <%= f.text_field :name,
+                     :class => "form-control required" %>
+    <%= error_span(@news[:name]) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :weight, :class => 'control-label' %>
+    <%= f.text_field :weight, :class => "form-control required" %>
+    <%= error_span(@news[:weight]) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :photo, :class => 'control-label' %>
+    <%= image_tag(@news.photo_url) if @news.photo? %>
+    <%= f.file_field :photo %>
+    <%= f.hidden_field :photo_cache %>
+  </div>
+  <div class="form-group">
+    <%= f.label :detail, :class => 'control-label' %>
+    <%= f.cktext_area :detail %>
+    <%= error_span(@news[:detail]) %>
+  </div>
+  <div class="form-group">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                :back, :class => 'btn btn-default' %>
+  </div>
+<% end %>

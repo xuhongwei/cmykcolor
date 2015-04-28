@@ -1,0 +1,10 @@
+<div id="products_index_head_container">
+  <div id="products_index_head">
+    <h4 class="pull-left"><%= t("links.news") %></h4>
+    <ol id="products_index_head_breadcrumb" class="breadcrumb pull-right">
+      <li><%= link_to t("links.home"), root_path %></li>
+      <li><%= link_to t("links.news"), news_index_path %></li>
+      <li class="active"><%= current_category %></li>
+    </ol>
+  </div>
+</div>

@@ -1,12 +1,10 @@
 <%- model_class = Product -%>
 <div class="page-header">
-  <h1><%=t :products %></h1>
+  <h3><%=t :products %></h3>
+  <%= link_to t('.new'),
+              new_admin_product_path,
+              :class => 'btn btn-primary' %>
 </div>
-
-<%= link_to t('.new'),
-            new_admin_product_path,
-            :class => 'btn btn-primary' %>
-<hr>
 <%= grid(@products_grid) do |grid|
   grid.column name: model_class.human_attribute_name(:name),
               attribute: 'name' do |product|

@@ -5,6 +5,7 @@
     <%= f.select :page_type,
                  Page::PAGE_TYPES.map { |value| [ t( "page_types." << value, default: value), value ] },
                  {},{ :class => "form-control" } %>
+    <%= error_span(@page[:page_type]) %>
   </div>
   <div class="form-group">
     <%= f.label :name, :class => 'control-label' %>

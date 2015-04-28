@@ -10,4 +10,8 @@ class ProductsController < ApplicationController
     @next = Product.friendly.next(@product, 1).first
     set_page_title @product.name
   end
+
+  def search
+    @products = Product.search_by_name_and_detail(params[:q]).try(:page, params[:page])
+  end
 end

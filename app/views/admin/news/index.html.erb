@@ -1,0 +1,50 @@
+<%- model_class = News -%>
+<div class="page-header">
+  <h3><%=t :news %></h3>
+  <%= link_to t('.new'),
+            new_admin_news_path,
+            :class => 'btn btn-primary' %>
+</div>
+<%= grid(@news) do |grid|
+  grid.column name: model_class.human_attribute_name(:name),
+              attribute: 'name' do |news|
+    link_to news.name.truncate(20),
+            admin_news_path(news),
+            { :title => news.name }
+  end
+
+  grid.column name: model_class.human_attribute_name(:weight),
+              attribute: 'weight' do |news|
+    news.weight
+  end
+
+  grid.column name: t(:photo), filter: false, ordering: false do |news|
+    buffer = ""
+    buffer << image_tag(news.photo, :size => '90x60')
+    raw buffer
+  end
+
+  grid.column name: model_class.human_attribute_name(:created_at),
+              attribute: 'created_at' do |news|
+    news.created_at.try(:strftime, "%Y-%m-%d %H:%M:%S")
+  end
+
+  grid.column name: model_class.human_attribute_name(:updated_at),
+              attribute: 'updated_at' do |news|
+    news.updated_at.try(:strftime, "%Y-%m-%d %H:%M:%S")
+  end
+
+  grid.column do |news|
+    buffer = ""
+    buffer << link_to(t('.edit'),
+                     edit_admin_news_path(news),
+                     :class => 'btn btn-default btn-xs')
+    buffer << link_to(t('.destroy'),
+                      admin_news_path(news),
+                      :method => :delete,
+                      :data => { :confirm => t("helpers.confirms.destroy",
+                                              :default => 'Are you sure?') },
+                      :class => 'btn btn-xs btn-danger')
+    raw buffer
+  end
+end -%>

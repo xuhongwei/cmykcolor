@@ -1,12 +1,10 @@
 <%- model_class = Service -%>
 <div class="page-header">
-  <h1><%=t :services %></h1>
-</div>
-
-<%= link_to t('.new'),
+  <h3><%=t :services %></h3>
+  <%= link_to t('.new'),
             new_admin_service_path,
             :class => 'btn btn-primary' %>
-<hr>
+</div>
 <%= grid(@services_grid) do |grid|
   grid.column name: model_class.human_attribute_name(:name),
               attribute: 'name' do |service|
