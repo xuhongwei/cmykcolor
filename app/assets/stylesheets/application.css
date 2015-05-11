@@ -230,3 +230,11 @@ body:before {
   height: 150px;
   margin-left: 20px;
 }
+
+#footer_contact {
+  width: 293px;
+}
+
+#footer_contact p {
+  margin: 0;
+}

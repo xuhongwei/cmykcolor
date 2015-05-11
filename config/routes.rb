@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     resources :pages
     resources :news
     resources :admins, only: [:index, :new, :destroy, :create]
+    resources :banners
   end
   
   root to: "home#index"

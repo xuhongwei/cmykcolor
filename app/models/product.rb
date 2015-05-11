@@ -13,6 +13,11 @@ class Product < ActiveRecord::Base
   validates :weight,  presence: true
   validates :brief,   presence: true
   validates :detail,  presence: true
+  validates :weight, :numericality => {
+    only_integer: true,
+    greater_than_or_equal_to: 0,
+    less_than_or_equal_to: 99999
+  }
 
   def self.search q
     q_downcase = q.try(:downcase)

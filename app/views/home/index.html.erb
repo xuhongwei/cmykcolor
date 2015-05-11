@@ -7,15 +7,14 @@
   </ol>
 
   <div class="carousel-inner">
-    <div class="active item">
-      <%= image_tag "weddings.jpg", {alt: "", class: "img-responsive"} %>
-    </div>
-    <div class="item">
-      <%= image_tag "weddings.jpg", {alt: "", class: "img-responsive"} %>
-    </div>
-    <div class="item">
-      <%= image_tag "weddings.jpg", {alt: "", class: "img-responsive"} %>
-    </div>
+    <% (0..2).each do |i| %>
+      <% banner = @banners[i] %>
+      <div class="item <%= i==0 ? "active" : "" %>">
+        <%= link_to image_tag(banner.try(:photo_url).present? ? banner.photo_url : "loading.gif",
+                              { alt: "", class: "img-responsive" }),
+                    banner.try(:url) %>
+      </div>
+    <% end %>
   </div>
 
   <a class="carousel-control" href="#banner" data-slide="prev">

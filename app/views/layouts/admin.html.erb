@@ -33,6 +33,9 @@
           <li class="<%= controller.controller_name.eql?('pages') ? 'active' : '' %>">
             <%= link_to(t(:pages), admin_pages_path) %>
           </li>
+          <li class="<%= controller.controller_name.eql?('banners') ? 'active' : '' %>">
+            <%= link_to(t(:banners), admin_banners_path) %>
+          </li>
           <li class="<%= controller.controller_name.eql?('admins') ? 'active' : '' %>">
             <%= link_to(t(:admins), admin_admins_path) %>
           </li>
