@@ -12,6 +12,6 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @products = Product.search_by_name_and_detail(params[:q]).try(:page, params[:page])
+    @products = Product.search(params[:q]).page params[:page]
   end
 end
