@@ -45,35 +45,35 @@
 }
 
 .service .service_icon_1{
-  background-image: url('banner_1.png');
+  background-image: image_url('banner_1.png');
 }
 
 .service .service_icon_2{
-  background-image: url('banner_2.png');
+  background-image: image_url('banner_2.png');
 }
 
 .service .service_icon_3{
-  background-image: url('banner_3.png');
+  background-image: image_url('banner_3.png');
 }
 
 .service .service_icon_4{
-  background-image: url('banner_4.png');
+  background-image: image_url('banner_4.png');
 }
 
 .service:hover .service_icon_1{
-  background-image: url('banner_1_hover.png');
+  background-image: image_url('banner_1_hover.png');
 }
 
 .service:hover .service_icon_2{
-  background-image: url('banner_2_hover.png');
+  background-image: image_url('banner_2_hover.png');
 }
 
 .service:hover .service_icon_3{
-  background-image: url('banner_3_hover.png');
+  background-image: image_url('banner_3_hover.png');
 }
 
 .service:hover .service_icon_4{
-  background-image: url('banner_4_hover.png');
+  background-image: image_url('banner_4_hover.png');
 }
 
 .service:hover .btn{
@@ -145,7 +145,7 @@
   height: 200px;
   bottom: 60px;
   background-color: rgb(235,235,235);
-  background: url('home_product_bg_small.png');
+  background: image_url('home_product_bg_small.png');
 }
 
 #products_list_right {
@@ -155,7 +155,7 @@
   bottom: 60px;
   right: 0;
   background-color: rgb(235,235,235);
-  background: url('home_product_bg_small.png');
+  background: image_url('home_product_bg_small.png');
 }
 
 #products_list_center {
@@ -166,7 +166,7 @@
   left: 250px;
   background-color: rgb(235,235,235);
   .b-hero{
-    background: url('home_product_bg_big.png') no-repeat right top;
+    background: image_url('home_product_bg_big.png') no-repeat right top;
   }
 }
 
