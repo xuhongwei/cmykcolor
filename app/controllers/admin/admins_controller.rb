@@ -3,7 +3,7 @@ class Admin::AdminsController < Admin::AdminApplicationController
   before_action :set_admin, only: [:destroy]
 
   def index
-    @admins = initialize_grid(Admin, 
+    @admins = initialize_grid(Admin,
                               order: 'updated_at',
                               order_direction: 'desc',
                               per_page: 10)

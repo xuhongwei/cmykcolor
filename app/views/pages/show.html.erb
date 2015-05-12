@@ -1,4 +1,4 @@
 <%= render partial: "common/pages_bread_crumb", locals: { page: @page } %>
 <div id="show_product_detail">
-  <%= raw @page.try :detail %>
+  <%= raw @page.try(:detail) %>
 </div>

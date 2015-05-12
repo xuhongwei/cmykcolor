@@ -15,5 +15,11 @@
 /log/*.log
 /tmp
 
+# Ignore all public assets
 /public/assets
 /public/uploads
+/public/system
+/public/ckeditor_assets
+
+#Ignore the database config file
+/config/database.yml
