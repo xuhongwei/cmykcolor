@@ -9,7 +9,7 @@ set :deploy_to, '/home/rails/ymckcolor.com'
 set :repository, 'https://github.com/xuhongwei/cmykcolor.git'
 set :branch, 'master'
 
-set :shared_paths, ['config/database.yml', 'log', 'public/system','public/ckeditor_assets']
+set :shared_paths, ['config/database.yml', 'log', 'public/system','public/ckeditor_assets', 'config/secrets.yml']
 # setting the term_mode to system disable the "pretty-print" but prevent some other issues
 set :term_mode, :system
 
