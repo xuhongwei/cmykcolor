@@ -45,35 +45,35 @@
 }
 
 .service .service_icon_1{
-  background-image: image_url('banner_1.png');
+  background-image: image-url('banner_1.png');
 }
 
 .service .service_icon_2{
-  background-image: image_url('banner_2.png');
+  background-image: image-url('banner_2.png');
 }
 
 .service .service_icon_3{
-  background-image: image_url('banner_3.png');
+  background-image: image-url('banner_3.png');
 }
 
 .service .service_icon_4{
-  background-image: image_url('banner_4.png');
+  background-image: image-url('banner_4.png');
 }
 
 .service:hover .service_icon_1{
-  background-image: image_url('banner_1_hover.png');
+  background-image: image-url('banner_1_hover.png');
 }
 
 .service:hover .service_icon_2{
-  background-image: image_url('banner_2_hover.png');
+  background-image: image-url('banner_2_hover.png');
 }
 
 .service:hover .service_icon_3{
-  background-image: image_url('banner_3_hover.png');
+  background-image: image-url('banner_3_hover.png');
 }
 
 .service:hover .service_icon_4{
-  background-image: image_url('banner_4_hover.png');
+  background-image: image-url('banner_4_hover.png');
 }
 
 .service:hover .btn{
@@ -145,7 +145,7 @@
   height: 200px;
   bottom: 60px;
   background-color: rgb(235,235,235);
-  background: image_url('home_product_bg_small.png');
+  background: image-url('home_product_bg_small.png');
 }
 
 #products_list_right {
@@ -155,7 +155,7 @@
   bottom: 60px;
   right: 0;
   background-color: rgb(235,235,235);
-  background: image_url('home_product_bg_small.png');
+  background: image-url('home_product_bg_small.png');
 }
 
 #products_list_center {
@@ -166,7 +166,7 @@
   left: 250px;
   background-color: rgb(235,235,235);
   .b-hero{
-    background: image_url('home_product_bg_big.png') no-repeat right top;
+    background: image-url('home_product_bg_big.png') no-repeat right top;
   }
 }
 
@@ -186,7 +186,7 @@
 
 #products_pager_prev {
   margin-left: 10px;
-  background-image: image_url("left_gray_arrow.png");
+  background-image: image-url("left_gray_arrow.png");
   color: #fff;
   width: 30px;
   height: 30px;
@@ -194,17 +194,17 @@
 }
 
 #products_pager_prev:hover {
-  background-image: image_url("left_red_arrow.png");
+  background-image: image-url("left_red_arrow.png");
 }
 
 #products_pager_prev.unclickble:hover {
-  background-image: image_url("left_gray_arrow.png");
+  background-image: image-url("left_gray_arrow.png");
 }
 
 #products_pager_next {
   margin-right: 20px;
   margin-left: 5px;
-  background-image: image_url("right_gray_arrow.png");
+  background-image: image-url("right_gray_arrow.png");
   text-decoration: none;
   color: #fff;
   width: 30px;
@@ -213,9 +213,9 @@
 }
 
 #products_pager_next:hover {
-  background-image: image_url("right_red_arrow.png");
+  background-image: image-url("right_red_arrow.png");
 }
 
 #products_pager_next.unclickble:hover {
-  background-image: image_url("right_gray_arrow.png");
+  background-image: image-url("right_gray_arrow.png");
 }

@@ -110,38 +110,38 @@
 #product_relative_previous{
   width: 30px;
   height: 30px;
-  background-image: image_url("left_red_arrow.png");
+  background-image: image-url("left_red_arrow.png");
 }
 #product_relative_previous:hover{
   width: 30px;
   height: 30px;
-  background-image: image_url("left_red_arrow.png");
+  background-image: image-url("left_red_arrow.png");
 }
 #product_relative_next{
   width: 30px;
   height: 30px;
-  background-image: image_url("right_red_arrow.png");
+  background-image: image-url("right_red_arrow.png");
 }
 #product_relative_next:hover{
   width: 30px;
   height: 30px;
-  background-image: image_url("right_red_arrow.png");
+  background-image: image-url("right_red_arrow.png");
 }
 
 #product_relative_previous.unclickble {
-  background-image: image_url("left_gray_arrow.png");
+  background-image: image-url("left_gray_arrow.png");
 }
 
 #product_relative_next.unclickble {
-  background-image: image_url("right_gray_arrow.png");
+  background-image: image-url("right_gray_arrow.png");
 }
 
 #product_relative_previous.unclickble:hover {
-  background-image: image_url("left_gray_arrow.png");
+  background-image: image-url("left_gray_arrow.png");
 }
 
 #product_relative_next.unclickble:hover {
-  background-image: image_url("right_gray_arrow.png");
+  background-image: image-url("right_gray_arrow.png");
 }
 
 .product_show_header_container{
