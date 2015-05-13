@@ -10,7 +10,7 @@
     <% (0..2).each do |i| %>
       <% banner = @banners[i] %>
       <div class="item <%= i==0 ? "active" : "" %>">
-        <%= link_to image_tag(banner.try(:photo_url).present? ? banner.photo_url : "wedding.jpg",
+        <%= link_to image_tag(banner.try(:photo_url).present? ? banner.photo_url : "weddings.jpg",
                               { alt: "", class: "img-responsive" }),
                     banner.try(:url) %>
       </div>
