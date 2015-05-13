@@ -27,3 +27,7 @@ en:
     contact: "Contact"
     terms: "Terms"
     testimonials: "Testimonials"
+
+  created_success: "Created success"
+  updated_success: "Updated success"
+  deleted_success: "Deleted success"
