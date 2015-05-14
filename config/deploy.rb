@@ -9,7 +9,7 @@ set :deploy_to, '/home/rails/ymckcolor.com'
 set :repository, 'https://github.com/xuhongwei/cmykcolor.git'
 set :branch, 'master'
 
-set :shared_paths, ['config/database.yml', 'log', 'public/system/','public/ckeditor_assets/', 'config/secrets.yml', 'public/uploads/']
+set :shared_paths, ['config/database.yml', 'log', 'public/system','public/ckeditor_assets', 'config/secrets.yml', 'public/uploads']
 # setting the term_mode to system disable the "pretty-print" but prevent some other issues
 set :term_mode, :system
 
@@ -49,6 +49,15 @@ task :setup => :environment do
 
   queue! %[mkdir -p "#{deploy_to}/shared/config"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/config"]
+
+  queue! %[mkdir -p "#{deploy_to}/shared/public/uploads"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/public/uploads"]
+
+  queue! %[mkdir -p "#{deploy_to}/shared/public/system"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/public/system"]
+
+  queue! %[mkdir -p "#{deploy_to}/shared/public/ckeditor_assets"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/public/ckeditor_assets"]
 
   queue! %[touch "#{deploy_to}/shared/config/database.yml"]
   queue  %[echo "-----> Fill in information below to populate 'shared/config/database.yml'."]
