@@ -3,7 +3,7 @@ class Product < ActiveRecord::Base
   friendly_id :slug_candidates, use: [:slugged, :finders]
   belongs_to :category, class_name: "Category", foreign_key: "category_id"
   mount_uploader :photo, PhotoUploader
-  paginates_per 1
+  paginates_per 6
 
   default_scope { order(weight: :desc, updated_at: :desc) }
   scope :previous, ->(i, limit) { where("id < ?", i.id).order(id: :desc).limit(limit) }

@@ -2,6 +2,7 @@ class News < ActiveRecord::Base
   extend FriendlyId
   friendly_id :slug_candidates, use: [:slugged, :finders]
   mount_uploader :photo, PhotoUploader
+  paginates_per 6
 
   default_scope { order(weight: :desc, updated_at: :desc) }
   scope :previous, ->(i, limit) { where("id < ?", i.id).order(id: :desc).limit(limit) }
