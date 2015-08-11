@@ -1,4 +1,7 @@
 class Page < ActiveRecord::Base
+
+  has_many :comments, :as => :commentable, :dependent => :destroy
+  
   default_scope { order(weight: :desc, id: :desc) }
   PAGE_TYPES = %w[about contactus faq term testimonial]
   # scope

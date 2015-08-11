@@ -1,10 +1,41 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.news_and_services {
+  margin: 20px 0 20px 0;
+}
+
+#news {
+  width: 400px;
+  height: 230px;
+  background-color: red;
+  float: left;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  padding-left: 10px;
+  padding-right: 10px;
+  h4 {
+    color: #7e8c8c;
+  }
+}
+
+.home_news_link {
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1; /* Fix for IE7 */
+  *display: inline; /* Fix for IE7 */
+  width: 100%;
+  margin-top: 7px;
+  overflow: hidden;
+  height:40px;
+  margin-top:4px;
+}
 
 #services {
-  margin: 20px 0 20px 0;
+  width: 540px;
+  padding-left: 10px;
   vertical-align: middle;
+  float: left;
 }
 
 #services_view_more {
@@ -14,24 +45,42 @@
 }
 
 #service_list{
-  height: 230px;
+  height: 140px;
+}
+
+#service_id {
+  margin-bottom: 10px;
+}
+
+.service-padding {
+  width: 126px;
+  float: left;
+  position: relative;
+  min-height: 1px;
+}
+
+.service_spiter {
+  width: 8px;
+  height: 113px;
+  float: left;
 }
 
 .service {
   display: block;
   position: relative;
-  width: 190px;
-  height: 190px;
+  width: 126px;
+  height: 150px;
   margin: 0 auto;
   text-align: center;
   background-color: #ededed;
 }
 
 .service .service_img { 
-  width:190px;
-  height:190px;
+  width:126px;
+  height:126px;
   display: none;
 }
+
 .service:hover .service_img{
   display : block;
 }
@@ -40,8 +89,8 @@
   width: 60px;
   height: 60px;
   position: absolute;
-  top: 55px;
-  left: 65px;
+  top: 30px;
+  left: 33px;
 }
 
 .service .service_icon_1{
@@ -84,17 +133,8 @@
 
 .service .btn {
   position: absolute;
-  top: 170px;
-  left: 47px;
-}
-
-.service-padding {
-  width: 225px;
-  float: left;
-  position: relative;
-  min-height: 1px;
-  padding-left: 38px;
-  padding-right: 15px;
+  top: 126px;
+  left: 16px;
 }
 
 

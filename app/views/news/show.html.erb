@@ -11,4 +11,18 @@
   <div id="show_product_detail">
     <%= raw @news.try :detail %>
   </div>
+  <div id="comments">
+    <ul class="comment-list">
+      <div class="comments-hd">
+        <span class="hd-title">
+          Comments count: <span class="highlight"><%= @news.comments.count %></span>
+        </span>
+      </div>
+      <div class="h-dotted-line"></div>
+      <%= render partial: "comments/comment", collection: @news.comments %>
+    </ul>
+  </div>
+  <div id="comments_wrapper">
+    <%= render :partial => 'comments/form', :locals => {:commentable => @news} %>
+  </div>
 </div>

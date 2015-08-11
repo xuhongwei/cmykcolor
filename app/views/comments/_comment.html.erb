@@ -1,0 +1,26 @@
+<li class="comment">
+  <div class="comment-content">
+    <a href="javascript:void(0)" class="comment-author-avatar">
+      <%= image_tag(avatar_url(comment.email), 
+                    height: '32',
+                    width: '32',
+                    class: 'avatar avatar-30') %>
+    </a>
+
+    <div class="content-bd">
+      <span class="comment-author-name">
+        <a href="javascript:void(0)" target="_blank">
+          <%= comment.try(:username) %>
+        </a>
+        <em class="colon">:</em>
+      </span>
+      <span class="comment-words">
+        <%= comment.try(:content) %>
+      </span>
+    </div>
+    <div class="comment-date">
+      <%= comment.try(:created_at).strftime("%Y-%m-%d %H:%M") %>
+    </div>
+  </div>
+  <div class="h-dotted-line"></div>
+</li>

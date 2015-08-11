@@ -1,0 +1,8 @@
+<li>
+  <%= link_to news.name.truncate(50),
+              news_path(news),
+              class: "home_news_link",
+              alt: news.name,
+              title: news.name %>
+  <div class="h-dotted-line"></div>
+</li>

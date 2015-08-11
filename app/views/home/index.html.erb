@@ -26,17 +26,25 @@
 </div>
 <!-- banner end========================= -->
 <!-- services start========================= -->
-<div id="services">
-  <div id="service_id" class="well">
-    <%= t "text.some_our_top_services" %>
-    <%= link_to t("links.view_more"),
-                services_path,
-                { id: "services_view_more",
-                  class: "btn btn-primary pull-right"
-                } %>
+<div class="news_and_services">
+  <div id="news">
+    <h4>News</h4>
+    <ul>
+      <%= render partial: "home/news", collection: @news %>
+    </ul>
   </div>
-  <div id="service_list">
-    <%= render :partial => "common/home_services", :object => @services %>
+  <div id="services">
+    <div id="service_id" class="well">
+      <%= t "text.some_our_top_services" %>
+      <%= link_to t("links.view_more"),
+                  services_path,
+                  { id: "services_view_more",
+                    class: "btn btn-primary pull-right"
+                  } %>
+    </div>
+    <div id="service_list">
+      <%= render :partial => "common/home_services", :object => @services %>
+    </div>
   </div>
 </div>
 <div class="clearfix"></div>

@@ -39,6 +39,9 @@
           <li class="<%= controller.controller_name.eql?('admins') ? 'active' : '' %>">
             <%= link_to(t(:admins), admin_admins_path) %>
           </li>
+          <li class="<%= controller.controller_name.eql?('comments') ? 'active' : '' %>">
+            <%= link_to(t(:comments), admin_comments_path) %>
+          </li>
         </ul>
         <%= render 'admin/common/admin_nav' %>
       </div>

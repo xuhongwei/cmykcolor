@@ -1,0 +1,33 @@
+<%= form_for(:comment,
+             :url => polymorphic_url([commentable, Comment]),
+             :html => { :class => "comment_form" }) do |f| %>
+  <div class="user_name">
+    <span class="red_star">*</span>
+    <%= f.text_field :username, placeholder: "Username" %>
+  </div>
+  <div class="user_email">
+    <span class="red_star">*</span>
+    <%= f.text_field :email, placeholder: "Email" %>
+  </div>
+
+  <div class="user_input">
+    <span class="red_star">*</span>
+    <textarea id="comment_content"
+              class="comment_input"
+              name="comment[content]"
+              placeholder="Say something..."
+              data-default="Say something..."
+              data-reply="Reply"></textarea>
+  </div>
+
+  <div class="user_op">
+    <span class="red_star"></span>
+    <input 
+           id="comment_submit"
+           type="submit"
+           class="submit_comment"
+           value="submit"
+           disable="disable"
+           data-loading="Submiting">
+  </div>
+<% end %>

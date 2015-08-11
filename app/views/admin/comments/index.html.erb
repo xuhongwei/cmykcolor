@@ -1,0 +1,51 @@
+<%- model_class = Comment -%>
+<div class="page-header">
+  <h3><%=t :comments %></h3>
+</div>
+<%= grid(@comments_grid) do |grid|
+
+  grid.column name: model_class.human_attribute_name(:username),
+              attribute: 'username' do |comment|
+    link_to comment.username.truncate(20),
+            admin_comment_path(comment),
+            { :title => comment.username }
+  end
+
+  grid.column name: model_class.human_attribute_name(:email),
+              attribute: 'email' do |comment|
+    comment.email
+  end
+
+  grid.column name: model_class.human_attribute_name(:content),
+              attribute: 'email' do |comment|
+    comment.content
+  end
+
+  grid.column name: model_class.human_attribute_name(:created_at),
+              attribute: 'created_at' do |comment|
+    comment.created_at.try(:strftime, "%Y-%m-%d %H:%M:%S")
+  end
+
+  grid.column name: model_class.human_attribute_name(:commentable_type),
+              attribute: 'commentable_type',
+              custom_filter: Comment::SOURCES.map \
+              { |value| [ value.name, value.name ] } do |comment|
+    comment.commentable_type
+  end
+
+  grid.column name: model_class.human_attribute_name(:commentable_id),
+              attribute: 'commentable_id' do |comment|
+    comment.commentable_id
+  end
+
+  grid.column do |comment|
+    buffer = ""
+    buffer << link_to(t('.destroy'),
+                      admin_comment_path(comment),
+                      :method => :delete,
+                      :data => { :confirm => t("helpers.confirms.destroy",
+                                              :default => 'Are you sure?') },
+                      :class => 'btn btn-xs btn-danger')
+    raw buffer
+  end
+end -%>

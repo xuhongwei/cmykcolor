@@ -1,5 +1,8 @@
 <% (0..3).each do |i| %>
   <% service = home_services[i] %>
+  <% if i > 0 %>
+    <div class="service_spiter"></div>
+  <% end %>
   <div class="service-padding">
     <div class="service">
       <% if service %>
@@ -15,7 +18,6 @@
         <a href="javascript:;" class="btn btn-primary"><%= t("links.read_more") %></a>
         <a href="javascript:;"><div class="service_icon service_icon_<%="#{i+1}"%>"></div></a>
       <% end %>
-      
     </div>
   </div>
 <% end %>

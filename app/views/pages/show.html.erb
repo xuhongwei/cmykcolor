@@ -1,4 +1,9 @@
 <%= render partial: "common/pages_bread_crumb", locals: { page: @page } %>
 <div id="show_product_detail">
   <%= raw @page.try(:detail) %>
+  <% if @page.try(:id) && @page.try(:page_type) == "contactus" %>
+    <div id="comments_wrapper">
+      <%= render :partial => 'comments/form', :locals => {:commentable => @page} %>
+    </div>
+  <% end %>
 </div>

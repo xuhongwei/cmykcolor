@@ -4,6 +4,8 @@ class News < ActiveRecord::Base
   mount_uploader :photo, PhotoUploader
   paginates_per 6
 
+  has_many :comments, :as => :commentable, :dependent => :destroy
+
   default_scope { order(weight: :desc, updated_at: :desc) }
   scope :previous, ->(i, limit) { where("id < ?", i.id).order(id: :desc).limit(limit) }
   scope :next, ->(i, limit) { where("id > ?", i.id).order(id: :asc).limit(limit) }

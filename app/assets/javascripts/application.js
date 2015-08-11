@@ -28,6 +28,30 @@ var ready = function() {
     });
   }
   toggleNavbarMethod();
+  function changeCommentSubmitButton() {
+    var username = $("#comment_username").val();
+    var email = $("#comment_email").val();
+    var content = $("#comment_content").val();
+    if(username.length > 0 && email.length > 0 && content.length > 0) {
+      $('#comment_submit').attr("disabled", false);
+      $('#comment_submit').addClass("active");
+    } else {
+      $('#comment_submit').attr("disabled", true);
+      $('#comment_submit').removeClass("active");
+    }
+  }
+  function commentValidate() {
+    $("#comment_username").keyup(function(e) {
+      changeCommentSubmitButton();
+    });
+    $("#comment_email").keyup(function(e) {
+      changeCommentSubmitButton();
+    });
+    $("#comment_content").keyup(function(e) {
+      changeCommentSubmitButton();
+    });
+  }
+  commentValidate();
 };
 $(document).ready(ready);
 $(document).on('page:load', ready);
