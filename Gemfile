@@ -34,10 +34,10 @@ gem 'mini_magick'
 #DB
 # Use sqlite3 as the database for Active Record
 group :development, :test do
-   gem 'sqlite3'
+    gem 'sqlite3'
 end
 group :production do
-  gem 'mysql2'
+    gem 'mysql2', '~> 0.3.18'
 end
 # SEO
 gem "settingslogic"

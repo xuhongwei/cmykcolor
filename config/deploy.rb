@@ -4,7 +4,7 @@ require 'mina/git'
 require 'mina/rvm'
 
 set :rails_env, 'production'
-set :domain, '106.187.41.16' 
+set :domain, '139.162.125.73' 
 set :deploy_to, '/home/rails/ymckcolor.com' 
 set :repository, 'https://github.com/xuhongwei/cmykcolor.git'
 set :branch, 'master'
